@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "tuku",
+        "description": "test",
+        "price": 0.0,
+        "tax": 0.0
+    },
+    {
+        "id": 2,
+        "name": "hari",
+        "description": "test",
+        "price": 10.0,
+        "tax": 0.0
+    },
+    {
+        "id": 3,
+        "name": "tuku",
+        "description": "test",
+        "price": 0.0,
+        "tax": 0.0
+    },
+    {
+        "id": 4,
+        "name": "tuku",
+        "description": "test",
+        "price": 0.0,
+        "tax": 0.0
+    }
+]

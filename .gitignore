@@ -1,0 +1,51 @@
+# ============================
+# Python / FastAPI .gitignore
+# ============================
+
+# Virtual environment
+venv/
+.env/
+.venv/
+env/
+ENV/
+
+# Python cache / build
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+
+# Logs
+*.log
+
+# SQLite database (optional)
+*.db
+*.sqlite3
+
+# Environment variables
+.env.local
+.env.development
+.env.production
+.env.test
+
+# OS-specific
+.DS_Store
+Thumbs.db
