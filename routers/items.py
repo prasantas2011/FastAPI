@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Body, status
 from sqlalchemy.orm import Session
-from typing import Union
 import schema
 from models import Item
 from database import get_db
