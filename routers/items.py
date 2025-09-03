@@ -9,6 +9,8 @@ router = APIRouter(
     tags=["items"],  # ✅ Swagger groups these endpoints
 )
 
+#setup with sqlalchemy orm
+
 @router.post("/" , response_model=schema.ItemResponse,status_code=status.HTTP_201_CREATED)
 def create_item(item: schema.ItemCreate, db: Session = Depends(get_db)):
     db_item = Item(**item.dict())
