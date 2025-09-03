@@ -8,4 +8,4 @@ class Item(Base):
     name = Column(String, index=True)
     description = Column(String)
     price = Column(Float)
-    tax = Column(Float)
+    tax = Column(Float, nullable=True)
