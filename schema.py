@@ -1,18 +1,20 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,ConfigDict
+from typing import Optional
 
 class ItemCreate(BaseModel):
     name : str
     description : str
     price : float
-    tax : float = None
+    tax: Optional[float] = None 
 
 class ItemResponse(BaseModel):
+    id : int
     name : str
     description : str
     price : float
+    tax: Optional[float] = None 
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True) 
 
 class SuccessResponse(BaseModel):
     message: str

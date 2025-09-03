@@ -11,7 +11,7 @@ router = APIRouter(
 
 @router.post("/" , response_model=schema.ItemResponse,status_code=status.HTTP_201_CREATED)
 async def create_item(item: schema.ItemCreate):
-    obj = await Item.create(**item.dict())
+    obj = await Item.create(**item.model_dump())
     return obj
 
 @router.get("/{item_id}", response_model=schema.ItemResponse, status_code=status.HTTP_200_OK)
@@ -33,7 +33,7 @@ async def read_items():
 @router.put("/{item_id}", response_model=schema.ItemResponse,status_code=status.HTTP_200_OK)
 async def update_item(item_id: int, item: schema.ItemCreate = Body(
         ...,
-        example={
+        examples={
             "name": "Updated Phone",
             "description": "Latest model with 5G",
             "price": 999.99,
@@ -48,7 +48,7 @@ async def update_item(item_id: int, item: schema.ItemCreate = Body(
             detail=f"Item {item_id} not found"
         )
     
-    for key, value in item.dict().items():
+    for key, value in item.model_dump().items():
         setattr(db_item, key, value)
     await db_item.save()
     return db_item
