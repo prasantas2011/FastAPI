@@ -7,6 +7,8 @@ router = APIRouter(
     tags=["items"],  # ✅ Swagger groups these endpoints
 )
 
+#setup with tortoise orm
+
 @router.post("/" , response_model=schema.ItemResponse,status_code=status.HTTP_201_CREATED)
 async def create_item(item: schema.ItemCreate):
     obj = await Item.create(**item.dict())
