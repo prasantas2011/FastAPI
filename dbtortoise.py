@@ -9,3 +9,13 @@ def init_db(app):
         add_exception_handlers=True,
     )
 
+
+TORTOISE_ORM = {
+    "connections": {"default": "sqlite://db.sqlite3"},
+    "apps": {
+        "models": {
+            "models": ["modelstortoise"],  # same as your module path
+            "default_connection": "default",
+        }
+    },
+}
